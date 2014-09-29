@@ -1,0 +1,162 @@
+@import "settings"
+@import "foundation.scss"
+
+// Style Guide
+// The standard TOC follows and is designed to be used with the <Find> command to quickly move between CSS sections
+/* Stylesheet guide
+ *
+ * Contents:
+   * Guidelines (not compiled into end product)
+   * Variable calls
+   * Color Pallete
+   * Color assignments
+   * Typography- fonts
+   * Typography- sizing and spacing rules
+   * Style rules- Elements @ mobile
+     * Primary HTML
+     * Classes, alphabetical (by first class appearing for nests)
+     * Specific identifiers (ie, #name)
+   * @media medium-up
+     * Typography- sizing and spacing rules
+     * Primary HTML
+     * Classes, alphabetical (by first class appearing for nests)
+     * Specific identifiers (ie, #name)
+   * @media ultra-large-up
+     * Typography- sizing and spacing rules
+     * Primary HTML
+     * Classes, alphabetical (by first class appearing for nests)
+     * Specific identifiers (ie, #name)
+   * @media print
+     * Typography- sizing and spacing rules
+     * Primary HTML
+     * Classes, alphabetical (by first class appearing for nests)
+     * Specific identifiers (ie, #name) */
+  // [END TOC]
+
+// Guidelines (not compiled into end product)
+
+// Replace this line with general project style guidelines.
+// What is the brand identity?
+// What should the site accomplish?
+// What are general layout guidelines at basic media queries?
+// NOTE:  Comments preceded by // are not compiled into final CSS
+// Comments blocked in /* ... */ ARE compiled into final CSS as comments
+
+/* Variable calls */
+// This is where general SASS variable calls go
+
+
+/* Color Pallete */
+// Insert color variables here
+// $white:        #FFFFFF
+// $black:        #000000
+    // Colors should always be declared in hex, full six digits, letters capitalized
+    // for consistency.  Color variables should be given an appropriate name.
+    // Rather than removing a color from the pallete, unused colors should be commented.
+    // This forces a CSS compile error, to identify where that color was being used.
+    // It also allows reversion to older colors on client request.
+
+    // Tabbing for consistent space between variable name and color id is recommended.
+    // Palleton.com is an excellent tool for evaluating various color combinations
+    // and palletes.
+
+/* Color Assignments */
+// Insert color use variables here
+// $body_text:    $black
+// $background:   $white
+    // This practice allows for effective CSS variable naming and rapid adjustments
+    // to large areas of site without having to hunt down individual locations where
+    // a color is used.
+
+/* Typography- sizing and spacing rules: */
+// The recommended starting values below and in the @media queries are from Jason
+// Pamental's blog post "A More Modern Scale for Web Typography", as it appeared
+// on www.typecast.com (http://typecast.com/blog/a-more-modern-scale-for-web-typography).
+// (Posted January 15, 2014 and referenced here Sept 29, 2014).
+
+body
+  font-size:        100%
+
+body, h1, h2, h3, h4, h5, h6
+  font-size-adjust: 0.5         //SET THIS AS PER PRIMARY TYPEFACE, TEST IN FIREFOX ONLY
+
+// Pay attention to how this works (todo)
+#page
+  font-size:        1em         // 16px
+  line-height:      1.25        // 20px base
+
+h1
+  font-size:        2em         // 32px
+  line-height:      1.25        // 45px //todo: test if this can come out (#page)
+
+h2
+  font-size:        1.625em     // 26px
+  line-height:      1.15384615  // 30px
+
+h3
+  font-size:        1.375em     // 22px
+  line-height:      1.13636364  // 25px
+
+h4
+  font-size:        1.125em     // 18px
+  line-height:      1.11111111  // 20px
+
+blockquote
+  font-size:        1.25em      // 20px
+  line-height:      1.25        // 25px //todo: test if this can come out (#page)
+
+
+/* Style rules- Elements @ mobile */
+  /* Primary HTML */
+header
+  @include grid-row
+  .logo
+    @include grid-column($columns:3, $center:true)
+  padding-bottom: em-calc(10px)
+
+
+.main-content
+  @include grid-row
+  aside
+    @include grid-column($columns:6)
+  article
+    @include grid-column($columns:6)
+
+
+/* @media medium-up */
+@media(min-width: rem-calc(700px))
+  /* Typography- sizing and spacing rules: */
+  #page
+    font-size:      1em         // 16px
+    line-height:    1.375       // 22px
+  h1
+    font-size:      2.5em       // 40px
+    line-height:    1.125       // 45px
+
+  h2
+    font-size:      2em         // 32px
+    line-height:    1.25        // 40px
+
+  h3
+    font-size:      1.5em       // 24px
+    line-height:    1.25        // 30px
+
+  h4
+    line-height:    1.22222222  // 22px
+
+  blockquote
+    font-size:      1.5em       // 24px
+    line-height:    1.45833333  // 35px
+
+/* @media ultra-large-up */
+@media(min-width: rem-calc(900px))
+  /* Typography- sizing and spacing rules: */
+  h1
+    font-size:      3em         // 48px
+    line-height:    1.041666667 // 50px
+
+  h2
+    font-size:      2.25em      //36px
+
+  h3
+    font-size:      1.75em      //28px

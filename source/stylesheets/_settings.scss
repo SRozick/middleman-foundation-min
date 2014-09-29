@@ -1,11 +1,19 @@
 //
 // FOUNDATION SETTINGS
 //
+// Commented lines show the default values.  Uncommented lines show values that
+// are inserted.
 
 // This is the default html and body font-size for the base rem value.
 // $rem-base: 16px;
 
 // Allows the use of rem-calc() or lower-bound() in your settings
+// This is found in source/bower_components/foundation/scss/foundation/_functions.scss
+// Asset path handling happens in COMPASS config, via the config.rb file in the main project folder
+// and the call to config.add_import_path.
+// Also may be affected by calls in config.rb to load .bowerrc (sets source/bower_components
+// as a viable directory), and to set the images, javascripts, and stylesheets
+// folders as points to be checked.
 @import "foundation/functions";
 
 // $experimental: true;
